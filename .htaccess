@@ -1,0 +1,22 @@
+# Use index.html as the default page
+DirectoryIndex index.html
+
+# Disable directory listing (important)
+Options -Indexes
+
+# Enable clean content types
+AddType text/css .css
+AddType application/javascript .js
+
+# Cache static assets (improves performance)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Force UTF-8
+AddDefaultCharset UTF-8
