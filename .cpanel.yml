@@ -2,20 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/therabro/public_html
-
-    # make sure the folders we need exist
-    - /bin/mkdir -p "$DEPLOYPATH/images"
-    - /bin/mkdir -p "$DEPLOYPATH/src"
-
-    # copy the actual site files
-    - /bin/cp -f index.html "$DEPLOYPATH/index.html"
-    - /bin/cp -f .htaccess "$DEPLOYPATH/.htaccess"
-    - /bin/cp -f src/about.html "$DEPLOYPATH/src/about.html"
-    - /bin/cp -f src/main.css "$DEPLOYPATH/src/main.css"
-    - /bin/cp -f images/glow-l.jpg "$DEPLOYPATH/images/glow-l.jpg"
-    - /bin/cp -f images/glow-s.jpg "$DEPLOYPATH/images/glow-s.jpg"
-
-    # fix normal web permissions
-    - /bin/chmod 750 "$DEPLOYPATH"
-    - /bin/chmod 755 "$DEPLOYPATH/images" "$DEPLOYPATH/src"
-    - /bin/chmod 644 "$DEPLOYPATH/index.html" "$DEPLOYPATH/.htaccess" "$DEPLOYPATH/src/about.html" "$DEPLOYPATH/src/main.css" "$DEPLOYPATH/images/glow-l.jpg" "$DEPLOYPATH/images/glow-s.jpg"
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /usr/bin/rsync -rltDzv --delete --exclude='.git/' --exclude='.cpanel.yml' --exclude='cgi-bin/' --exclude='.well-known/' ./ "$DEPLOYPATH"/
+    - /bin/sh -c 'find "$DEPLOYPATH" -type d -exec chmod 755 {} \;'
+    - /bin/sh -c 'find "$DEPLOYPATH" -type f -exec chmod 644 {} \;'
