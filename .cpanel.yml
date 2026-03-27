@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/therabro/public_html/
-    - /bin/cp -R images $DEPLOYPATH
+    - /usr/bin/rsync -av --delete --exclude='.git/' --exclude='.cpanel.yml' --exclude='cgi-bin/' --exclude='.well-known/' ./ $DEPLOYPATH
