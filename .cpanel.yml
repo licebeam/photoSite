@@ -3,3 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/therabro/public_html/
     - /usr/bin/rsync -av --delete --exclude='.git/' --exclude='.cpanel.yml' --exclude='cgi-bin/' --exclude='.well-known/' ./ $DEPLOYPATH
+    - /bin/chmod 750 $DEPLOYPATH
+    - /usr/bin/find $DEPLOYPATH -mindepth 1 -type d -exec chmod 755 {} \;
+    - /usr/bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
