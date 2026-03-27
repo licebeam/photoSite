@@ -1,8 +1,40 @@
+html {
+  overflow-y: scroll;
+  margin: 0 auto;
+  width: 1080;
+}
+
 body {
   background-color: rgb(0, 0, 0);
   color: wheat;
-  margin: 0 auto;
-  width: 1080;
+}
+
+.header-section {
+  padding: 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-section {
+  margin-top: 40px;
+  display: flex;
+  padding: 8px;
+  font-size: 12px;
+  color: wheat;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+}
+
+.text-content {
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 16px;
+  color: wheat;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
 }
 
 .image-section {
@@ -11,13 +43,15 @@ body {
 
 .image {
   align-self: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .image-title {
+  margin-top: 20px;
   font-family: "Cormorant Garamond", serif;
   font-style: normal;
   font-optical-sizing: auto;
-  padding: 8px;
   font-size: 16px;
   font-weight: bold;
   color: orange;
@@ -26,5 +60,31 @@ body {
 .camera-settings {
   padding: 8px;
   font-size: 12px;
+  color: wheat;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+}
+
+/* unvisited link */
+a:link {
   color: orange;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: orange;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: wheat;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: wheat;
+  text-decoration: none;
 }
