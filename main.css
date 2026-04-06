@@ -1,7 +1,7 @@
 html {
   overflow-y: scroll;
   margin: 0 auto;
-  width: 1080;
+  max-width: 1080;
 }
 
 body {
@@ -45,6 +45,8 @@ body {
   align-self: center;
   margin-top: 40px;
   margin-bottom: 40px;
+  max-width: 100%;
+  height: auto;
 }
 
 .image-title {
