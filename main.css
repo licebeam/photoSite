@@ -1,18 +1,24 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   overflow-y: scroll;
-  margin: 0 auto;
 }
 
 body {
+  margin: 0;
   background-color: rgb(0, 0, 0);
   color: wheat;
   overflow-x: hidden;
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 .container {
@@ -22,6 +28,9 @@ img {
 }
 
 .header-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   padding: 8px;
   font-family: "Cormorant Garamond", serif;
   font-style: normal;
@@ -51,11 +60,12 @@ img {
 
 .image-section {
   padding: 8px;
-  max-width: 1080px;
 }
 
 .image {
-  align-self: center;
+  display: block;
+  width: 100%;
+  height: auto;
   margin: 40px auto;
 }
 
@@ -77,25 +87,13 @@ img {
   font-optical-sizing: auto;
 }
 
-/* unvisited link */
-a:link {
-  color: orange;
-  text-decoration: none;
-}
-
-/* visited link */
+a:link,
 a:visited {
   color: orange;
   text-decoration: none;
 }
 
-/* mouse over link */
-a:hover {
-  color: wheat;
-  text-decoration: none;
-}
-
-/* selected link */
+a:hover,
 a:active {
   color: wheat;
   text-decoration: none;
