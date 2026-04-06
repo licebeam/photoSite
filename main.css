@@ -1,7 +1,6 @@
 html {
   overflow-y: scroll;
   margin: 0 auto;
-  max-width: 1080px;
 }
 
 body {
@@ -14,6 +13,11 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.container {
+  border: 1px solid red;
+  max-width: 1080px;
 }
 
 .header-section {
@@ -46,6 +50,7 @@ img {
 
 .image-section {
   padding: 8px;
+  max-width: 1080px;
 }
 
 .image {
